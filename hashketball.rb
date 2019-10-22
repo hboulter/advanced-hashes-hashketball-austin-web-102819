@@ -250,6 +250,7 @@ def long_name_steals_a_ton
       if player[:steals] > most_steals
         most_steals = player[:steals]
         player_with_most_steals = player[:player_name]
+      end
     }
   }
   p player_with_most_steals
