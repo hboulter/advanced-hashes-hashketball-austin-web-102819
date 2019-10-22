@@ -217,7 +217,7 @@ def winning_team
       home += team_data[:points]
       binding.pry
     }
-
+end
 
 def player_with_longest_name
   longest_name = 0
