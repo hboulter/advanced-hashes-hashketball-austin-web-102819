@@ -213,17 +213,49 @@ end
 def winning_team
   home = 0
   away = 0
-    game_hash[:home][:players].each {|location, team_data|
-      home += team_data[:points]
+    game_hash[:home][:players].each {|location|
+      home += location[:points]
     }
-    game_hash[:away][:players].each {|location, team_data|
-      away += team_data[:points]
+    game_hash[:away][:players].each {|location|
+      away += location[:points]
     }
-      if home > away
-        game_hash[:home][:team_name]
-      elsif home < away
-        game_hash[:away][:team_name]
-      else
-        "It's a tie!"
+    if home > away
+      game_hash[:home][:team_name]
+    elsif home < away
+      game_hash[:away][:team_name]
+    else
+      "It's a tie!"
     end
+end
+
+def player_with_longest_name
+  longest_name = 0
+  player_name = 0
+  game_hash.each {|location, team_data|
+    team_data[:players].each {|player|
+      if player[:player_name].length > longest_name
+        longest_name = player[:player_name].length
+        player_name = player[:player_name]
+      end
+     }
+    }
+    player_name
+end
+
+def long_name_steals_a_ton?
+  most_steals = 0
+  player_with_most_steals = 0
+  game_hash.each {|location, team_data|
+    team_data[:players].each {|player|
+      if player[:steals] > most_steals
+        most_steals = player[:steals]
+        player_with_most_steals = player[:player_name]
+      end
+    }
+  }
+  if player_with_longest_name && player_with_most_steals
+    true
+  else
+    false
+  end
 end
