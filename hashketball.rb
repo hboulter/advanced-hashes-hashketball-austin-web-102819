@@ -214,7 +214,6 @@ def winning_team
   home = 0
   away = 0
     game_hash.each {|location, team_data|
-      home += team_data[:points]
       binding.pry
     }
 end
