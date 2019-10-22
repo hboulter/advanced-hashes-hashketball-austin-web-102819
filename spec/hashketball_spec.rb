@@ -266,13 +266,13 @@ describe 'bonus' do
 
    end
 
-  # describe '#player_with_longest_name' do
+   describe '#player_with_longest_name' do
 
-    # it 'returns Bismack Biyombo' do
-      # expect(player_with_longest_name).to eq("Bismack Biyombo")
-    # end
+     it 'returns Bismack Biyombo' do
+       expect(player_with_longest_name).to eq("Bismack Biyombo")
+     end
 
-  # end
+   end
 
 end
 
