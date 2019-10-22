@@ -213,12 +213,11 @@ end
 def winning_team
   home = 0
   away = 0
-    game_hash[:home][:players].each {|location, team_data|
-      binding.pry
-      home += team_data[:points]
+    game_hash[:home][:players].each {|location|
+      home += location[:points]
     }
-    game_hash[:away][:players].each {|location, team_data|
-      away += team_data[:points]
+    game_hash[:away][:players].each {|location|
+      away += location[:points]
     }
     if home > away
       game_hash[:home][:team_name]
