@@ -243,5 +243,14 @@ def player_with_longest_name
 end
 
 def long_name_steals_a_ton
-  
+  most_steals = 0
+  player_with_most_steals = 0
+  game_hash.each {|location, team_data|
+    team_data[:players].each {|player|
+      if player[:steals] > most_steals
+        most_steals = player[:steals]
+        player_with_most_steals = player[:player_name]
+    }
+  }
+  p player_with_most_steals
 end
