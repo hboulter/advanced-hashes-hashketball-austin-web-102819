@@ -214,6 +214,7 @@ def winning_team
   home = 0
   away = 0
     game_hash[:home][:players].each {|location, team_data|
+      =begin
       home += team_data[:points]
     }
     game_hash[:away][:players].each {|location, team_data|
@@ -226,6 +227,7 @@ def winning_team
     else
       "It's a tie!"
     end
+    =end
 end
 
 def player_with_longest_name
