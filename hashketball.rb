@@ -227,3 +227,17 @@ def winning_team
         "It's a tie!"
     end
 end
+
+def player_with_longest_name
+  longest_name = 0
+  player_name = 0
+  game_hash.each {|location, team_data|
+    team_data[:players].each {|player|
+      if player[:name] > longest_name
+        longest_name = player[:name]
+        player_name = player[:player_name]
+      end
+     }
+    }
+    player_name
+end

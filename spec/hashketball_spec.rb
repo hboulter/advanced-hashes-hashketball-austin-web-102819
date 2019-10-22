@@ -248,15 +248,15 @@ end
 
 # If you'd like to work on the bonus, uncomment these tests.
 
-# describe 'bonus' do
+describe 'bonus' do
 
-  # describe '#most_points_scored' do
+  describe '#most_points_scored' do
 
-    # it 'returns Ben Gordon' do
-      # expect(most_points_scored).to eq("Ben Gordon")
-    # end
+    it 'returns Ben Gordon' do
+      expect(most_points_scored).to eq("Ben Gordon")
+    end
 
-  # end
+  end
 
   # describe '#winning_team' do
 
@@ -274,7 +274,7 @@ end
 
   # end
 
-# end
+end
 
 # describe 'super bonus' do
 
